@@ -109,7 +109,10 @@ My proposed solution utilizes a Service Oriented Architecture approach which are
 
 Now, for the system to be fault tolerant, I'm thinking that the `RateConvertionService` should have an elastic auto scaling mechanism in case 
 that the server load cannot handle it and it will spawn a new instance to cater the load. When the server load lessens, it must revert back or reduce the
-number of instances of the server. It should also consider the implementation of each services to make sure that the server usage is efficient.
+number of instances of the server.
+
+It should also consider the implementation of each services should have a good test coverage and refactored very well 
+to make sure that the server usage is efficient.
 
 Regarding the security, the services are only accessible within the Shopbacks internal network or VPC and only to be used by other Shopback services.
 If it is needed to be accessed or used publicly, it should have a public proxy service that requires an access token to be used.
