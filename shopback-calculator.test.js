@@ -1,6 +1,6 @@
 /**
  * *****************************
- * | FUNCTION/ACCEPTANCE TESTS |
+ * | FUNCTIONAL/ACCEPTANCE TESTS |
  * *****************************
  */
 
