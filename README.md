@@ -9,7 +9,7 @@
 
 * Node js v6.9.x or Greater
 
-* [Yarn](https://yarnpkg.com/en/docs/install) (Optional, but I still recommend to install it 😀)
+* [Yarn](https://yarnpkg.com/en/docs/install) (Optional, but I still recommend installing it 😀)
 
 ## Requirements Installation
 
@@ -76,7 +76,11 @@ git clone git@github.com:iammac360/sb-programming-ex.git
 If you already cloned the repository, please follow the follow steps below:
 
 ```
+// If you have installed yarn you can install dependencies by running this:
 yarn install
+
+// Otherwise, you can still use the handy npm install
+npm install
 ```
 
 ### Running the cli tool
