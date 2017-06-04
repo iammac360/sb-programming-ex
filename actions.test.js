@@ -30,4 +30,10 @@ describe('signUp(<domain>)', () => {
       expect(Actions.signUp('www.shopback.co.th')).toEqual('500.00 THB')
     })
   })
+
+  describe('when domain is www.shopback.com', () => {
+    it('should return 5.00 USD', () => {
+      expect(Actions.signUp('www.shopback.com')).toEqual('5.00 USD')
+    })
+  })
 })

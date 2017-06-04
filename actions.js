@@ -22,6 +22,8 @@ function signUp(domain) {
       return '1000.00 TWD'
     case 'www.shopback.co.th':
       return '500.00 THB'
+    case 'www.shopback.com':
+      return '5.00 USD'
     default:
       return 'Invalid domain'
   }
