@@ -17,7 +17,7 @@ Your job is to design a solution that will address the following concerns:
 
 ![Shopback Forex Diagram Problem1](https://www.dropbox.com/s/mg8k8mlmy7t01vp/ShopbackEx1.jpg?dl=0&raw=1)
 
-My proposed solution utilizes a Service Oriented Architecture approach which are separated to a different services.
+My proposed solution utilizes a Service Oriented Architecture approach which are separated to a 2 services.
 
 1. RateUpdaterService - This service fetches the new rates from the external rates provider like 
   [OpenExchange.org](https://openexchangerates.org/api/latest.json) and stores the new rates on the Rates Database. 
