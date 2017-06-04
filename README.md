@@ -1,5 +1,7 @@
 # SB Programming Exercise
 
+[![CircleCI](https://circleci.com/gh/iammac360/sb-programming-ex.svg?style=svg)](https://circleci.com/gh/iammac360/sb-programming-ex)
+
 ## System Requirements:
 
 * Git
