@@ -1,6 +1,3 @@
-# README
-
-
 # SB Programming Exercise
 
 ## System Requirements:
