@@ -10,11 +10,12 @@ An existing engine that tracks and update all customer transactions within the p
 Your job is to design a solution that will address the following concerns:
 
 1. Exchange rate used for each transaction must be of a fresh rate updated within 24 hours before the transaction date (i.e. the date of purchase)
-2. Throughput of existing engine utilizing the new exchange rates must not be reduced by more than 1%. 3. Fault tolerant
+2. Throughput of existing engine utilizing the new exchange rates must not be reduced by more than 1%. 
+3. Fault tolerant
 
 ## Solution
 
-![Shopback Forex Diagram Problem1](https://photos-3.dropbox.com/t/2/AAA8dWLKvlGjC0Fn6GS_dpQ164jOq9jaWnkw2xHh3dvgEA/12/37400127/jpeg/32x32/1/_/1/2/ShopbackEx1.jpg/EMHhuxwYm_YFIAIoAg/oW9EbwmC9NZPOhkdZZrvSR2ffq6kz1QjY_KC3APauPo?size=2048x1536&size_mode=3)
+![Shopback Forex Diagram Problem1](https://www.dropbox.com/s/mg8k8mlmy7t01vp/ShopbackEx1.jpg?dl=0&raw=1)
 
 My proposed solution utilizes a Service Oriented Architecture approach which are separated to a different services.
 
