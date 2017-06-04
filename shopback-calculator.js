@@ -17,6 +17,9 @@ switch(action) {
   case 'spend':
     console.log(Actions.spend(actionArgs))
     break
+  case 'redeem':
+    console.log(Actions.redeem(actionArgs[0]))
+    break
   default:
     console.log('Invalid Action')
 

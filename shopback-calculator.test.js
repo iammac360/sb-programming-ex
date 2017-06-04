@@ -11,6 +11,17 @@ beforeEach(() => {
 });
 
 /**
+ * ACTION: invalid action
+ */
+test('Executing `shopback-calculator.js nonexistent-action www.shopback.sg` should respond with `Invalid Action`', () => {
+
+  return exec('node shopback-calculator.js nonexistent-action www.shopback.sg')
+    .catch((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Invalid Action')
+    }) 
+})
+
+/**
  * ACTION: signup 
  */
 test('Executing `shopback-calculator.js signup www.shopback.sg` should respond with `Award bonus: 5.00 SGD`', () => {
@@ -71,4 +82,55 @@ test('Executing `shopback-calculator.js spend 20 10 15` should respond with `Awa
     .then((result) => {
       return expect(result.stdout.trim('\n')).toEqual('Award cashback: 2.00')
     }) 
+})
+
+/**
+ * ACTION: redeem 
+ */
+test('Executing `shopback-calculator.js redeem www.shopback.sg` should respond with `Visit https://www.shopback.sg to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.sg')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.sg to start earning cashback!')
+    })
+})
+
+test('Executing `shopback-calculator.js redeem www.shopback.my` should respond with `Visit https://www.shopback.my to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.my')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.my to start earning cashback!')
+    })
+})
+
+test('Executing `shopback-calculator.js redeem www.shopback.co.id` should respond with `Visit https://www.shopback.co.id to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.co.id')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.co.id to start earning cashback!')
+    })
+})
+
+test('Executing `shopback-calculator.js redeem www.shopback.com.tw` should respond with `Visit https://www.shopback.com.tw to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.com.tw')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.com.tw to start earning cashback!')
+    })
+})
+
+test('Executing `shopback-calculator.js redeem www.shopback.co.th` should respond with `Visit https://www.shopback.co.th to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.co.th')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.co.th to start earning cashback!')
+    })
+})
+
+test('Executing `shopback-calculator.js redeem www.shopback.com` should respond with `Visit https://www.shopback.com to start earning cashback!`', () => {
+
+  return exec('node shopback-calculator.js redeem www.shopback.com')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Visit https://www.shopback.com to start earning cashback!')
+    })
 })
