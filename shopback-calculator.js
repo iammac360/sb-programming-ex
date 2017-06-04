@@ -9,13 +9,13 @@ const actionArgs = process.argv.filter((v, i) => i >= 3)
 // import shopback calculator actions
 const Actions = require('./actions')
 
-//console.log(action)
-//console.log(actionArgs)
-
 // Map and validate actions
 switch(action) {
   case 'signup':
-    Actions.signUp(actionArgs)
+    console.log(Actions.signUp(actionArgs[0]))
+    break
+  case 'spend':
+    console.log(Actions.spend(actionArgs))
     break
   default:
     console.log('Invalid Action')

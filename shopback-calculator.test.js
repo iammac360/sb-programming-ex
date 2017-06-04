@@ -1,15 +1,74 @@
 /**
- * ACCEPTANCE TESTS
+ * *****************************
+ * | FUNCTION/ACCEPTANCE TESTS |
+ * *****************************
  */
-
 
 const exec = require('child-process-promise').exec;
 
-test('Executing shopback-calculator.js signup www.shopback.sg should respond with `Award bonus: 5.00 SGD`', () => {
+beforeEach(() => {
   expect.assertions(1);
+});
+
+/**
+ * ACTION: signup 
+ */
+test('Executing `shopback-calculator.js signup www.shopback.sg` should respond with `Award bonus: 5.00 SGD`', () => {
 
   return exec('node shopback-calculator.js signup www.shopback.sg')
     .then((result) => {
-      return expect(result).toEqual('Award bonus: 5.00 SGD')
+      return expect(result.stdout.trim('\n')).toEqual('Award bonus: 5.00 SGD')
+    }) 
+})
+
+test('Executing `shopback-calculator.js signup www.shopback.my` should respond with `Award bonus: 10.00 MYR`', () => {
+
+  return exec('node shopback-calculator.js signup www.shopback.my')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Award bonus: 10.00 MYR')
+    }) 
+})
+
+
+/**
+ * ACTION: spend 
+ */
+test('Executing `shopback-calculator.js spend 0` should respond with `No cashback`', () => {
+
+  return exec('node shopback-calculator.js spend 0')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('No cashback')
+    }) 
+})
+
+test('Executing `shopback-calculator.js spend 20` should respond with `Award cashback: 3.00`', () => {
+
+  return exec('node shopback-calculator.js spend 20')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Award cashback: 3.00')
+    }) 
+})
+
+test('Executing `shopback-calculator.js spend 100 5` should respond with `Award cashback: 5.00`', () => {
+
+  return exec('node shopback-calculator.js spend 100 5')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Award cashback: 5.00')
+    }) 
+})
+
+test('Executing `shopback-calculator.js spend 10 10 10` should respond with `Award cashback: 1.00`', () => {
+
+  return exec('node shopback-calculator.js spend 10 10 10')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Award cashback: 1.00')
+    }) 
+})
+
+test('Executing `shopback-calculator.js spend 20 10 15` should respond with `Award cashback: 2.00`', () => {
+
+  return exec('node shopback-calculator.js spend 20 10 15')
+    .then((result) => {
+      return expect(result.stdout.trim('\n')).toEqual('Award cashback: 2.00')
     }) 
 })
