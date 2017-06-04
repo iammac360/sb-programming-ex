@@ -25,7 +25,7 @@ My proposed solution utilizes a Service Oriented Architecture approach which are
   This can be on a single dedicated server instance since its only task is just to update the rates on the database 
   but it can also have a mirror instance if somethings goes wrong.
 
-2. **RateConvertionService** - This service provides the updated rates to be used by other ShopBack services like Payment Service, Commision Service, Cashback Service etc..
+2. **RateConvertionService** - This service provides the updated rates to be used by other ShopBack services like Payment Service, Commision Service, Cashback Service etc.
    I'm thinking of having a REST or RPC interface for this service because it is easy to implement and doesn't have that much endpoints to be implemented.
 
    Sample endpoint for rate convertion:
