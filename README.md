@@ -102,3 +102,34 @@ node shopback-calculator.js redeem www.shopback.sg
 ```
 npm test
 ```
+
+### Adding New Actions
+
+Adding a new action is just simple. Just create a new js file on the `actions` directory and load your modules on the `./actions/index.js`
+file for e.g.
+
+```
+// IF YOU HAVE A `newAction.action.js` file, load it like this on `./actions/index.js`
+
+
+/*
+ * `./actions/index.js`
+ */
+const signUp = require('./signup.action') 
+const spend = require('./spend.action') 
+const redeem = require('./redeem.action') 
+
+// New file
+const newAction = require('./newAction.action') 
+
+module.exports = {
+  signUp,
+  spend,
+  redeem,
+
+  // New module
+  newAction,
+}
+```
+
+Make sure you also create a test counterpart to ensure the quality of the code.
