@@ -41,4 +41,10 @@ describe('signUp(<domain>)', () => {
       expect(signUp('someinvaliddomain.no')).toEqual('Invalid domain')
     })
   })
+
+  describe('when domain is an array of strings', () => {
+    it('should return valid response', () => {
+      expect(signUp(['www.shopback.com'])).toEqual('Award bonus: 5.00 USD')
+    })
+  })
 })

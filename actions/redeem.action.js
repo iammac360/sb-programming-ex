@@ -2,11 +2,11 @@
 * redeem() returns the url to direct user to visit corresponding website
 * based on domain
 *
-* @param String domain
+* @param (String | Array) domain
 * @return String
 */
 function redeem(domain) {
-  switch(domain) {
+  switch(Array.isArray(domain) ? domain[0] : domain) {
     case 'www.shopback.sg':
       return 'Visit https://www.shopback.sg to start earning cashback!'
     case 'www.shopback.my':

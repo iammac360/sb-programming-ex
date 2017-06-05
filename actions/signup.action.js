@@ -6,7 +6,7 @@
 * @return String
 */
 function signUp(domain) {
-  switch(domain) {
+  switch(Array.isArray(domain) ? domain[0] : domain) {
     case 'www.shopback.sg':
       return 'Award bonus: 5.00 SGD'
     case 'www.shopback.my':

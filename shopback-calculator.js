@@ -10,19 +10,11 @@ const actionArgs = process.argv.filter((v, i) => i >= 3)
 const Actions = require('./actions')
 
 // Map and validate actions
-switch(action) {
-  case 'signup':
-    console.log(Actions.signUp(actionArgs[0]))
-    break
-  case 'spend':
-    console.log(Actions.spend(actionArgs))
-    break
-  case 'redeem':
-    console.log(Actions.redeem(actionArgs[0]))
-    break
-  default:
-    console.log('Invalid Action')
+Actions[action] ? console.log(Actions[action](actionArgs)) : defaultHandler()
 
-    // To indicate failure to shell with exit code 1
-    process.exit(1)
+function defaultHandler() {
+  console.log('Invalid Action')
+
+  // To indicate failure to shell with exit code 1
+  process.exit(1)
 }

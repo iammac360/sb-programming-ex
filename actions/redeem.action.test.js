@@ -42,4 +42,10 @@ describe('redeem(<domain>)', () => {
       expect(redeem('someinvaliddomain.no')).toEqual('Invalid domain')
     })
   })
+
+  describe('when domain is an array of strings', () => {
+    it('should return valid response', () => {
+      expect(redeem(['www.shopback.com'])).toEqual('Visit https://www.shopback.com to start earning cashback!')
+    })
+  })
 })
