@@ -132,4 +132,4 @@ module.exports = {
 }
 ```
 
-Make sure you also create a test counterpart to ensure the quality of the code.
+Make sure you also create a test counterpart to ensure the quality of the code especially when refactoring.
